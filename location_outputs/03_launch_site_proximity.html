@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a6ae4c857d69bb4d2ec12704a68f070f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+</head>
+<body>
+    
+    <div style="position:fixed;top:12px;left:60px;z-index:999;background:white;padding:12px 16px;border-radius:6px;box-shadow:0 1px 6px #999;font:14px Arial;max-width:340px"><b>CCAFS LC-40: nearby features</b><br><span style="font-size:12px">Move the cursor for coordinates; click the map to pin a coordinate</span></div>
+    
+            <div class="folium-map" id="map_a6ae4c857d69bb4d2ec12704a68f070f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a6ae4c857d69bb4d2ec12704a68f070f = L.map(
+                "map_a6ae4c857d69bb4d2ec12704a68f070f",
+                {
+                    center: [28.56230197, -80.57735648],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+
+            
+
+        
+    
+            var tile_layer_b75dda90ca3bb1964aadf00c391a6f95 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b75dda90ca3bb1964aadf00c391a6f95.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+            var marker_d9cae83f7c647f0571aa1bdac7fc57e5 = L.marker(
+                [28.56230197, -80.57735648],
+                {
+}
+            ).addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+            var icon_243d34a0c8ca9022cf829de169767268 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f357fde9f1f375bb9d90be51fdff6ce1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b700b94c738866ce1405106687d53a3 = $(`<div id="html_4b700b94c738866ce1405106687d53a3" style="width: 100.0%; height: 100.0%;">Reference launch site: CCAFS LC-40</div>`)[0];
+                popup_f357fde9f1f375bb9d90be51fdff6ce1.setContent(html_4b700b94c738866ce1405106687d53a3);
+            
+        
+
+        marker_d9cae83f7c647f0571aa1bdac7fc57e5.bindPopup(popup_f357fde9f1f375bb9d90be51fdff6ce1)
+        ;
+
+        
+    
+    
+            marker_d9cae83f7c647f0571aa1bdac7fc57e5.bindTooltip(
+                `<div>
+                     CCAFS LC-40 (course coordinate)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d9cae83f7c647f0571aa1bdac7fc57e5.setIcon(icon_243d34a0c8ca9022cf829de169767268);
+            
+    
+            var mouse_position_40fc153cb1008bab00090046e7fc6d2f = new L.Control.MousePosition(
+                {
+  "position": "topright",
+  "separator": " Long: ",
+  "emptyString": "Move cursor over map",
+  "lngFirst": false,
+  "numDigits": 5,
+  "prefix": "Lat:",
+}
+            );
+            mouse_position_40fc153cb1008bab00090046e7fc6d2f.options["latFormatter"] =
+                function(num) {return L.Util.formatNum(num, 5);};;
+            mouse_position_40fc153cb1008bab00090046e7fc6d2f.options["lngFormatter"] =
+                function(num) {return L.Util.formatNum(num, 5);};;
+            map_a6ae4c857d69bb4d2ec12704a68f070f.addControl(mouse_position_40fc153cb1008bab00090046e7fc6d2f);
+        
+    
+                var lat_lng_popup_ae3367fa94456429ef87e36825cf84a4 = L.popup();
+                function latLngPop(e) {
+                    lat_lng_popup_ae3367fa94456429ef87e36825cf84a4
+                        .setLatLng(e.latlng)
+                        .setContent("Latitude: " + e.latlng.lat.toFixed(4) +
+                                    "<br>Longitude: " + e.latlng.lng.toFixed(4))
+                        .openOn(map_a6ae4c857d69bb4d2ec12704a68f070f);
+                    }
+                map_a6ae4c857d69bb4d2ec12704a68f070f.on('click', latLngPop);
+            
+    
+            tile_layer_b75dda90ca3bb1964aadf00c391a6f95.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+                marker_d9cae83f7c647f0571aa1bdac7fc57e5.setIcon(icon_243d34a0c8ca9022cf829de169767268);
+            
+    
+            var feature_group_fc97edfb135693c799071e17bd77b5e2 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_1ab9e7554b958fc9b9d88ef07117a3c9 = L.polyline(
+                [[28.5585414, -80.5672642], [28.5654777, -80.5683199], [28.5692557, -80.5693376], [28.5729907, -80.5705833], [28.577715, -80.5723198], [28.5825378, -80.5737497], [28.585535, -80.5748072], [28.5880146, -80.5765667], [28.5912319, -80.5789962], [28.5940965, -80.5814333], [28.5953927, -80.5825233], [28.5967416, -80.5838451], [28.598083, -80.5850983], [28.5990477, -80.5859774], [28.6012029, -80.5879908], [28.6030691, -80.5896124], [28.6043216, -80.5908167], [28.6047764, -80.5912539], [28.610648, -80.5963803], [28.6138067, -80.5991693], [28.6153667, -80.6006212], [28.6191076, -80.6038954], [28.6227392, -80.6070364], [28.6257855, -80.6096716], [28.6268445, -80.6105724], [28.6297424, -80.6130091], [28.6306885, -80.6137468]],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#555555", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_fc97edfb135693c799071e17bd77b5e2);
+        
+    
+            poly_line_1ab9e7554b958fc9b9d88ef07117a3c9.bindTooltip(
+                `<div>
+                     https://www.openstreetmap.org/way/22322002
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fe0f5f95f99879abcb794797eaa47596 = L.polyline(
+                [[28.5139133, -80.6126927], [28.5199158, -80.6221615], [28.5214167, -80.6245717]],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#555555", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_fc97edfb135693c799071e17bd77b5e2);
+        
+    
+            poly_line_fe0f5f95f99879abcb794797eaa47596.bindTooltip(
+                `<div>
+                     Nasa Parkway East
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ea268138d8cb290933bc5b7c1e44e133 = L.polyline(
+                [[28.5618912, -80.577406], [28.5634566, -80.5770868], [28.5634903, -80.5770793]],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#555555", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_fc97edfb135693c799071e17bd77b5e2);
+        
+    
+            poly_line_ea268138d8cb290933bc5b7c1e44e133.bindTooltip(
+                `<div>
+                     https://www.openstreetmap.org/way/96332348
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var feature_group_5528e043c58379781d5975903a62c683 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_f1c5a97a3b5ec774da4765db44f51f88 = L.marker(
+                [28.563400059209226, -80.56800368452737],
+                {
+}
+            ).addTo(feature_group_5528e043c58379781d5975903a62c683);
+        
+    
+            var div_icon_2ee7dbe76c4b2a646fe060592b9ac04d = L.divIcon({
+  "html": "\u003cdiv style=\"white-space:nowrap;background:white;border:2px solid #0072B2;border-radius:4px;padding:4px 7px;font:12px Arial\"\u003eCoastline: 0.922 km\u003c/div\u003e",
+  "iconSize": [210, 28],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_7e57ce2ab9b9f9e0d319988a7bdfe019 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8abfedc18299ab040d4fdd226a01cd71 = $(`<div id="html_8abfedc18299ab040d4fdd226a01cd71" style="width: 100.0%; height: 100.0%;"><b>Coastline: Coastline</b><br>Straight-line distance: 0.922 km<br><a href="https://www.openstreetmap.org/way/22322002" target="_blank">OpenStreetMap source</a></div>`)[0];
+                popup_7e57ce2ab9b9f9e0d319988a7bdfe019.setContent(html_8abfedc18299ab040d4fdd226a01cd71);
+            
+        
+
+        marker_f1c5a97a3b5ec774da4765db44f51f88.bindPopup(popup_7e57ce2ab9b9f9e0d319988a7bdfe019)
+        ;
+
+        
+    
+    
+            marker_f1c5a97a3b5ec774da4765db44f51f88.bindTooltip(
+                `<div>
+                     Coastline: 0.922 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f1c5a97a3b5ec774da4765db44f51f88.setIcon(div_icon_2ee7dbe76c4b2a646fe060592b9ac04d);
+            
+    
+            feature_group_5528e043c58379781d5975903a62c683.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+            tile_layer_b75dda90ca3bb1964aadf00c391a6f95.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+                marker_d9cae83f7c647f0571aa1bdac7fc57e5.setIcon(icon_243d34a0c8ca9022cf829de169767268);
+            
+    
+                marker_f1c5a97a3b5ec774da4765db44f51f88.setIcon(div_icon_2ee7dbe76c4b2a646fe060592b9ac04d);
+            
+    
+            feature_group_5528e043c58379781d5975903a62c683.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+            var poly_line_7fa3b5334dc1ef64319d35b2d5712610 = L.polyline(
+                [[28.56230197, -80.57735648], [28.563400059209226, -80.56800368452737]],
+                {"bubblingMouseEvents": true, "color": "#0072B2", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#0072B2", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_5528e043c58379781d5975903a62c683);
+        
+    
+            poly_line_7fa3b5334dc1ef64319d35b2d5712610.bindTooltip(
+                `<div>
+                     Coastline: 0.922 km (straight line)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            tile_layer_b75dda90ca3bb1964aadf00c391a6f95.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+                marker_d9cae83f7c647f0571aa1bdac7fc57e5.setIcon(icon_243d34a0c8ca9022cf829de169767268);
+            
+    
+                marker_f1c5a97a3b5ec774da4765db44f51f88.setIcon(div_icon_2ee7dbe76c4b2a646fe060592b9ac04d);
+            
+    
+            feature_group_5528e043c58379781d5975903a62c683.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+            var feature_group_85c93877ba6601d7a5df186e38da4bfc = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_6fb549c69bd7f487d1be226026ccb308 = L.marker(
+                [28.56229675153396, -80.57732330417168],
+                {
+}
+            ).addTo(feature_group_85c93877ba6601d7a5df186e38da4bfc);
+        
+    
+            var div_icon_3affb31ea367f8bb8a8fed0d417873f1 = L.divIcon({
+  "html": "\u003cdiv style=\"white-space:nowrap;background:white;border:2px solid #8E44AD;border-radius:4px;padding:4px 7px;font:12px Arial\"\u003eRailway: 0.003 km\u003c/div\u003e",
+  "iconSize": [210, 28],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_c86287905d38027966a4a67c660eca95 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1e789d55d90791b4ad8e6e0c79c4a2b2 = $(`<div id="html_1e789d55d90791b4ad8e6e0c79c4a2b2" style="width: 100.0%; height: 100.0%;"><b>Railway: Rail spur</b><br>Straight-line distance: 0.003 km<br><a href="https://www.openstreetmap.org/way/96332348" target="_blank">OpenStreetMap source</a></div>`)[0];
+                popup_c86287905d38027966a4a67c660eca95.setContent(html_1e789d55d90791b4ad8e6e0c79c4a2b2);
+            
+        
+
+        marker_6fb549c69bd7f487d1be226026ccb308.bindPopup(popup_c86287905d38027966a4a67c660eca95)
+        ;
+
+        
+    
+    
+            marker_6fb549c69bd7f487d1be226026ccb308.bindTooltip(
+                `<div>
+                     Railway: 0.003 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6fb549c69bd7f487d1be226026ccb308.setIcon(div_icon_3affb31ea367f8bb8a8fed0d417873f1);
+            
+    
+            var poly_line_01e9c5c0e5d0ee39ce5eee86bd925513 = L.polyline(
+                [[28.56230197, -80.57735648], [28.56229675153396, -80.57732330417168]],
+                {"bubblingMouseEvents": true, "color": "#8E44AD", "dashArray": "6 4", "dashOffset": null, "fill": false, "fillColor": "#8E44AD", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_85c93877ba6601d7a5df186e38da4bfc);
+        
+    
+            poly_line_01e9c5c0e5d0ee39ce5eee86bd925513.bindTooltip(
+                `<div>
+                     Railway: 0.003 km (straight line)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8f24ddf16f1f2a1ca8c63315085de495 = L.marker(
+                [28.51575906216737, -80.61560434561605],
+                {
+}
+            ).addTo(feature_group_85c93877ba6601d7a5df186e38da4bfc);
+        
+    
+            var div_icon_8fcd43af48f8bb65c6c038ff228486e3 = L.divIcon({
+  "html": "\u003cdiv style=\"white-space:nowrap;background:white;border:2px solid #D55E00;border-radius:4px;padding:4px 7px;font:12px Arial\"\u003eMajor road: 6.385 km\u003c/div\u003e",
+  "iconSize": [210, 28],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_4feac10dced51931814f202be4ad8e21 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b65eaac53290523cc73f04d02f32e5b5 = $(`<div id="html_b65eaac53290523cc73f04d02f32e5b5" style="width: 100.0%; height: 100.0%;"><b>Major road: Nasa Parkway East</b><br>Straight-line distance: 6.385 km<br><a href="https://www.openstreetmap.org/way/26948002" target="_blank">OpenStreetMap source</a></div>`)[0];
+                popup_4feac10dced51931814f202be4ad8e21.setContent(html_b65eaac53290523cc73f04d02f32e5b5);
+            
+        
+
+        marker_8f24ddf16f1f2a1ca8c63315085de495.bindPopup(popup_4feac10dced51931814f202be4ad8e21)
+        ;
+
+        
+    
+    
+            marker_8f24ddf16f1f2a1ca8c63315085de495.bindTooltip(
+                `<div>
+                     Major road: 6.385 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8f24ddf16f1f2a1ca8c63315085de495.setIcon(div_icon_8fcd43af48f8bb65c6c038ff228486e3);
+            
+    
+            var poly_line_f3beca0a6c51fa0297bb9134e9174da2 = L.polyline(
+                [[28.56230197, -80.57735648], [28.51575906216737, -80.61560434561605]],
+                {"bubblingMouseEvents": true, "color": "#D55E00", "dashArray": "6 4", "dashOffset": null, "fill": false, "fillColor": "#D55E00", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_85c93877ba6601d7a5df186e38da4bfc);
+        
+    
+            poly_line_f3beca0a6c51fa0297bb9134e9174da2.bindTooltip(
+                `<div>
+                     Major road: 6.385 km (straight line)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f700a0f6df816055c2cdf3b8601c6daa = L.marker(
+                [28.3881442, -80.6056464],
+                {
+}
+            ).addTo(feature_group_85c93877ba6601d7a5df186e38da4bfc);
+        
+    
+            var div_icon_88504a326207db916fa6f6a9f422b44d = L.divIcon({
+  "html": "\u003cdiv style=\"white-space:nowrap;background:white;border:2px solid #228833;border-radius:4px;padding:4px 7px;font:12px Arial\"\u003eCity/town centre: 19.568 km\u003c/div\u003e",
+  "iconSize": [210, 28],
+  "iconAnchor": [0, 0],
+  "className": "empty",
+});
+        
+    
+        var popup_f648565083b29f035697b51f26ccd860 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_71453861a8bea3376f88a32f625bc263 = $(`<div id="html_71453861a8bea3376f88a32f625bc263" style="width: 100.0%; height: 100.0%;"><b>City/town centre: Cape Canaveral</b><br>Straight-line distance: 19.568 km<br><a href="https://www.openstreetmap.org/node/154352850" target="_blank">OpenStreetMap source</a></div>`)[0];
+                popup_f648565083b29f035697b51f26ccd860.setContent(html_71453861a8bea3376f88a32f625bc263);
+            
+        
+
+        marker_f700a0f6df816055c2cdf3b8601c6daa.bindPopup(popup_f648565083b29f035697b51f26ccd860)
+        ;
+
+        
+    
+    
+            marker_f700a0f6df816055c2cdf3b8601c6daa.bindTooltip(
+                `<div>
+                     City/town centre: 19.568 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f700a0f6df816055c2cdf3b8601c6daa.setIcon(div_icon_88504a326207db916fa6f6a9f422b44d);
+            
+    
+            var poly_line_0367585ca6c9f1c45de645d37223c622 = L.polyline(
+                [[28.56230197, -80.57735648], [28.3881442, -80.6056464]],
+                {"bubblingMouseEvents": true, "color": "#228833", "dashArray": "6 4", "dashOffset": null, "fill": false, "fillColor": "#228833", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_85c93877ba6601d7a5df186e38da4bfc);
+        
+    
+            poly_line_0367585ca6c9f1c45de645d37223c622.bindTooltip(
+                `<div>
+                     City/town centre: 19.568 km (straight line)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_85c93877ba6601d7a5df186e38da4bfc.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+            map_a6ae4c857d69bb4d2ec12704a68f070f.fitBounds(
+                [[28.56230197, -80.57735648], [28.563400059209226, -80.56800368452737], [28.56229675153396, -80.57732330417168], [28.51575906216737, -80.61560434561605], [28.3881442, -80.6056464]],
+                {"padding": [70, 70]}
+            );
+        
+    
+            var layer_control_88478f96f59b714253d111599a727a4f_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_b75dda90ca3bb1964aadf00c391a6f95,
+                },
+                overlays :  {
+                    "Selected OSM feature geometry" : feature_group_fc97edfb135693c799071e17bd77b5e2,
+                    "Coastline distance" : feature_group_5528e043c58379781d5975903a62c683,
+                    "Rail, road, and settlement distances" : feature_group_85c93877ba6601d7a5df186e38da4bfc,
+                },
+            };
+            let layer_control_88478f96f59b714253d111599a727a4f = L.control.layers(
+                layer_control_88478f96f59b714253d111599a727a4f_layers.base_layers,
+                layer_control_88478f96f59b714253d111599a727a4f_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+
+        
+    
+            tile_layer_b75dda90ca3bb1964aadf00c391a6f95.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+                marker_d9cae83f7c647f0571aa1bdac7fc57e5.setIcon(icon_243d34a0c8ca9022cf829de169767268);
+            
+    
+                marker_f1c5a97a3b5ec774da4765db44f51f88.setIcon(div_icon_2ee7dbe76c4b2a646fe060592b9ac04d);
+            
+    
+            feature_group_5528e043c58379781d5975903a62c683.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+    
+                marker_6fb549c69bd7f487d1be226026ccb308.setIcon(div_icon_3affb31ea367f8bb8a8fed0d417873f1);
+            
+    
+                marker_8f24ddf16f1f2a1ca8c63315085de495.setIcon(div_icon_8fcd43af48f8bb65c6c038ff228486e3);
+            
+    
+                marker_f700a0f6df816055c2cdf3b8601c6daa.setIcon(div_icon_88504a326207db916fa6f6a9f422b44d);
+            
+    
+            feature_group_85c93877ba6601d7a5df186e38da4bfc.addTo(map_a6ae4c857d69bb4d2ec12704a68f070f);
+        
+</script>
+</html>

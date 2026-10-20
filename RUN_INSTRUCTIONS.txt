@@ -1,0 +1,184 @@
+SpaceX capstone notebooks
+
+Machine learning prediction lab
+SpaceX-Machine-Learning-Prediction-Part-5-v1.ipynb completes all 12 tasks.
+Open it with the project Python kernel and use Restart Kernel / Run All.
+It loads the local dataset_part_2.csv and dataset_part_3.csv, validates row
+alignment by FlightNumber, and uses the requested 80/20 split with
+random_state=2: 72 training launches and 18 test launches, with 80 features.
+All four models use 10-fold GridSearchCV with accuracy scoring. The deprecated
+decision-tree max_features='auto' alias is represented by 'sqrt' once, and the
+repeated SVM rbf candidate is removed. Tree randomness is fixed for repeatability.
+
+The prescribed course sequence standardizes all rows before splitting; its
+scores are explicitly labelled as course-workflow results. An additional
+comparison uses a StandardScaler/estimator pipeline so scaling is fitted only
+on each training fold. This does not undo full-dataset preprocessing performed
+in the earlier labs or validate historical feature availability for deployment.
+The notebook explains these limits and the uncertainty from only 18 test rows.
+
+Saved results with scikit-learn 1.6.1:
+    Course test accuracy: logistic regression 83.33%, SVM 83.33%,
+    decision tree 72.22%, KNN 83.33%.
+    Fold-fitted scaling: training CV selects SVM (83.57% mean CV);
+    its test accuracy is 83.33%, versus a 66.67% majority-class baseline.
+Results can vary across dependency versions; the installed version is recorded.
+ml_outputs/ contains four confusion-matrix PNGs, a model-comparison PNG,
+course/fold_scaled comparison CSVs, per-launch test predictions, and
+run_summary.json (feature names, split indices, version, and selected method).
+Outputs and a computed conclusion are also saved inside the notebook.
+Run its regression checks with:
+    python -m unittest discover -s capstone -p 'test_machine_learning.py' -v
+
+Plotly Dash assignment
+The four PDF tasks are complete in spacex_dash_app.py. From the project root:
+    ./.venv/bin/python capstone/spacex_dash_app.py --port 8060
+Then open http://127.0.0.1:8060 in a browser. Ctrl+C stops the server.
+Omit --port to use the course's default port 8050. During verification both
+8050 and 8051 were occupied, so the local preview uses 8060.
+The application uses modern Dash imports and app.run(), and resolves its
+dataset/assets relative to the script, independent of the working directory.
+
+The searchable site dropdown changes both charts. The all-sites pie sums
+class=1 by site; a single-site pie counts class=0 versus class=1. The slider
+has bounds 0–10,000 kg and 1,000 kg steps and filters only the scatter plot,
+including both selected endpoints. Booster category colors stay consistent.
+The full-range default includes all 56 course records. Empty selections are
+shown explicitly. The five analysis answers are in DASHBOARD_INSIGHTS.txt.
+
+The dataset is stored unchanged in data/spacex_launch_dash.csv. The original
+incomplete starter is retained separately as data/spacex_dash_app_skeleton.py.
+Sources:
+    https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/datasets/spacex_launch_dash.csv
+    https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/labs/module_3/spacex_dash_app.py
+No live API requests are required to run the dashboard. The completed project
+is available at https://github.com/VavanZaa/IBM-Capstone.
+
+dashboard_outputs/ contains chart PNGs and standalone interactive HTML chart
+exports for slides. These are chart exports, not screenshots of the Dash UI.
+Browser automation could not open the page because its request-header policy
+failed to load, so dashboard screenshots were not captured automatically.
+For the PDF's screenshots, open the local app and capture the all-sites view,
+a single-site view, and a restricted payload view using your screenshot tool.
+The graph toolbar camera also downloads individual charts.
+Optional regeneration of saved chart exports:
+    python -m pip install kaleido
+    python capstone/export_dashboard_charts.py
+Recent Kaleido versions may also require Chrome.
+Dashboard tests exercise the actual Dash HTTP callbacks for all sites,
+payload boundaries, empty ranges, and source-data immutability:
+    python -m unittest discover -s capstone -p 'test_dashboard.py' -v
+
+Open each notebook with a Python 3 kernel and run its cells from top to bottom.
+The data-wrangling notebook is labs-jupyter-spacex-Data wrangling-v2.ipynb.
+It loads the previous lab's local dataset_part_1.csv, with the supplied course
+reference as a fallback. It completes all four tasks, excludes GTO only from
+the Task 2 orbit counts as instructed, labels landings by explicit outcome
+names, and exports dataset_part_2.csv beside the notebook.
+Expected results: 90 launches, 60 successful labels, 30 unsuccessful labels,
+and a 66.67% success rate under the lab's definition (including True Ocean).
+
+The SQL notebook is jupyter-labs-eda-sql-coursera_sqllite.ipynb.
+It uses the separate 101-row course SQL dataset in data/Spacex.csv, Python's
+built-in sqlite3 module, and pandas to display SQL results. No SQLAlchemy,
+ipython-sql, PrettyTable, or remote database is required. Run all cells to create
+my_data1.db beside the notebook and display the answers to all ten tasks.
+SPACEXTBL preserves raw input; SPACEXTABLE excludes blank dates and trims text.
+Task 3 matches the exact NASA (CRS) customer label. Task 4 matches the exact
+F9 v1.1 booster label. Task 7 groups the source's "Success (payload status
+unclear)" entry with successful missions (100 successes, 1 failure); this is
+distinct from a successful booster landing. Task 10 includes both date bounds.
+SQL dataset source (saved unchanged):
+    https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/labs/module_2/data/Spacex.csv
+
+The visualization notebook is jupyter-labs-eda-dataviz-v2.ipynb.
+It reads local dataset_part_2.csv, completes all eight tasks, and saves seven
+PNG charts in dataviz_outputs/ as well as embedding them in the notebook.
+Orbit/year success charts include launch counts; written observations reflect
+the actual data. Missing years are not interpreted as zero-success years.
+The year-extraction helper uses its input and can be rerun safely.
+The feature export dataset_part_3.csv has 90 rows and 80 float64 columns, with
+Orbit, LaunchSite, LandingPad, and Serial encoded using pd.get_dummies.
+Unknown LandingPad values have zeros in all landing-pad indicator columns,
+as in the lab's default encoding. Class and the auxiliary Year column are
+excluded from the feature matrix.
+
+The location notebook is lab-jupyter-launch-site-location-v2.ipynb.
+It uses data/spacex_launch_geo.csv (56 launches, four site labels) and completes
+all three Folium tasks. location_outputs/ contains three interactive HTML maps,
+launch_site_distances.csv, and launch_site_summary.csv. The notebook also embeds
+the maps. Open exported HTML in a browser if your notebook viewer blocks maps.
+Calculations use local files; displaying map tiles and JavaScript/CSS requires
+internet access. Green/red launch markers represent class 1/0. Click clusters
+to zoom in, and at maximum zoom overlapping launch markers spread out.
+
+The proximity example uses CCAFS LC-40's course coordinate and sourced
+OpenStreetMap features, not guessed coordinates. MousePosition and click
+coordinate popups allow interactive inspection. The saved Overpass query
+searches coastline/rail within 10 km, major roads within 15 km, and city/town
+nodes within 60 km. Nearest line points use a local projection approximation;
+the notebook computes great-circle distances using the lab's 6373 km radius.
+The rail feature is an internal spur, not the external railway network.
+City distances refer to mapped centres, not urban boundaries. Map features
+are contemporary to the timestamp in the extract; they need not match the
+configuration at historical launch dates. Source course coordinates are kept.
+Rebuild the selected reference points from the cached extract with:
+    python capstone/prepare_launch_site_points.py
+Data sources:
+    https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/datasets/spacex_launch_geo.csv
+    https://maps.mail.ru/osm/tools/overpass/api/interpreter
+Exact query, timestamp, and OpenStreetMap attribution are retained in
+data/launch_site_osm_features.json; individual feature links are in
+data/launch_site_proximity_points.csv. OSM data is available under the ODbL.
+
+Install dependencies if needed:
+    python -m pip install -r capstone/requirements.txt
+
+Run the regression checks from the project root:
+    python -m unittest discover -s capstone -p 'test_*.py' -v
+
+The web-scraping notebook exports spacex_web_scraped.csv in its working directory.
+It requests the June 9, 2021 Wikipedia revision and can use the unchanged saved
+HTML when the network is unavailable. The lab's numeric flight-number rule
+excludes Falcon Heavy entries labelled FH.
+
+The API notebook now runs without the live API. Use Restart Kernel and Run All
+after reopening the updated notebook so old function definitions are replaced.
+USE_LIVE_API = False is the default and reads the supplied historical metadata.
+The booster cell prints 94 launches: 90 Falcon 9 and 4 Falcon 1.
+The notebook filters to Falcon 9 and exports dataset_part_1.csv (90 rows).
+Set USE_LIVE_API = True and restart to attempt live requests with local fallback.
+
+data/spacex_lab_metadata.json records the provenance of every resource:
+rocket names and original payload fields are from archived API responses;
+Falcon 9 core/launchpad fields come from IBM's published course reference CSV.
+Core IDs and launchpad IDs were matched by unique date to the original launch
+snapshot, with core flight counts checked and duplicate-ID values validated.
+Payload masses come from the archived raw API, not the reference CSV's already
+imputed values, so the missing-value exercise is still performed.
+Unavailable Falcon 1 core/launchpad details remain missing; those four launches
+are excluded by Task 2. Unrecognized IDs raise explicit errors. ReusedCount
+reflects the course reference rather than current reuse totals.
+Synthetic API responses remain confined to regression tests.
+
+Changes include completed task cells, explicit HTTP status checks and timeouts,
+cached ID lookups, helpers that can be rerun without appending duplicates,
+safe Falcon 9 filtering, mean imputation, citation-safe HTML parsing, preserved
+linked and unlinked text, unknown payload masses kept missing, executable CSV
+exports, valid notebook metadata, and standard Python 3 kernel references.
+
+Saved public input snapshots (downloaded unchanged on 2026-10-20):
+data/API_call_spacex_api.json
+    https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/datasets/API_call_spacex_api.json
+data/falcon9_wikipedia_1027686922.html
+    https://en.wikipedia.org/wiki/Special:PermanentLink/1027686922
+
+The Wikipedia HTML is a rendering of revision 1027686922, not the current page.
+Original lab author and copyright notices remain in both notebooks. The saved
+Wikipedia page retains its original attribution and license information.
+
+Additional metadata sources:
+    https://web.archive.org/web/20251128034223id_/https://api.spacexdata.com/v4/rockets
+    https://web.archive.org/web/20240802054003id_/https://api.spacexdata.com/v4/payloads
+data/course_dataset_part_1_reference.csv (unchanged reference, not generated output):
+    https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/datasets/dataset_part_1.csv

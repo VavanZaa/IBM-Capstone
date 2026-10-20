@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+presentation/.build/
+presentation/assets/maps/
+presentation/assets/folium_outcomes.png
+presentation/assets/folium_proximity_raw.png
+Build_a_Dashboard_Application_with_Plotly_Dash.pdf

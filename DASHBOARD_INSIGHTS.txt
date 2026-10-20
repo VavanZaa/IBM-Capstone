@@ -1,0 +1,47 @@
+SpaceX dashboard assignment — observations from the supplied 56-row dataset
+
+1. Most successful outcomes: KSC LC-39A, with 10.
+   The all-sites pie shows 24 successes in total, so this site accounts for
+   41.67% of successful outcomes. That share is not the site's success rate.
+
+2. Highest success rate: KSC LC-39A, 10 of 13 launches (76.92%).
+   Other sites: CCAFS SLC-40 3/7 (42.86%); VAFB SLC-4E 4/10 (40.00%);
+   CCAFS LC-40 7/26 (26.92%).
+
+3. Highest payload-bin success rate: 3,000–under 4,000 kg, 8/11 (72.73%).
+   This answer uses fixed 1,000 kg bins across all sites, rather than judging
+   overlapping points by eye. It also has the greatest number of successes.
+
+4. Lowest observed payload-bin success rate: 6,000–under 7,000 kg,
+   0/4 (0%). The empty 7,000–9,000 kg bins have no measured success rate.
+
+5. Highest booster-category success rate: B5, 1/1 (100%).
+   This is only one launch and is not strong evidence of a general advantage.
+   FT has the most successes (16/24, 66.67%). Other categories:
+   B4 6/11 (54.55%), v1.1 1/15 (6.67%), v1.0 0/5 (0%).
+
+Payload-bin table (lower bound included, upper bound excluded):
+Payload mass (kg)   Successful / launches   Success rate
+0–under 1,000              2 / 10             20.00%
+1,000–under 2,000          1 /  3             33.33%
+2,000–under 3,000          5 / 10             50.00%
+3,000–under 4,000          8 / 11             72.73%
+4,000–under 5,000          3 /  8             37.50%
+5,000–under 6,000          2 /  5             40.00%
+6,000–under 7,000          0 /  4              0.00%
+7,000–under 8,000          0 /  0             undefined
+8,000–under 9,000          0 /  0             undefined
+9,000–10,000               3 /  5             60.00%
+
+The last bin includes 10,000 kg; the dataset maximum is 9,600 kg.
+The interactive slider includes BOTH selected endpoints, unlike the
+non-overlapping bins in this summary. No missing masses are inferred; values
+of zero are retained exactly as provided by the course dataset.
+
+These are descriptive associations in this historical course sample.
+Payload, site, booster generation, and time are related; these charts alone
+do not establish that one factor causes a successful landing. Success/failure
+follows the course's supplied binary class, not a newly derived mission status.
+
+Data source (downloaded unchanged on 2026-10-20):
+https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/datasets/spacex_launch_dash.csv

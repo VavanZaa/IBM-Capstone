@@ -1,0 +1,5 @@
+Model,CVAccuracy,CVStd,TestAccuracy,TN,FP,FN,TP,BestParameters
+Logistic regression,0.8071428571428572,0.10528144980702624,0.8333333333333334,3,3,0,12,"{""model__C"": 1, ""model__penalty"": ""l2"", ""model__solver"": ""lbfgs""}"
+SVM,0.8357142857142857,0.11456439237389601,0.8333333333333334,3,3,0,12,"{""model__C"": 1.0, ""model__gamma"": 0.03162277660168379, ""model__kernel"": ""sigmoid""}"
+Decision tree,0.8339285714285714,0.11407625895488885,0.7222222222222222,3,3,2,10,"{""model__criterion"": ""gini"", ""model__max_depth"": 10, ""model__max_features"": ""sqrt"", ""model__min_samples_leaf"": 1, ""model__min_samples_split"": 2, ""model__splitter"": ""random""}"
+KNN,0.8196428571428571,0.1191086153260878,0.8333333333333334,3,3,0,12,"{""model__algorithm"": ""auto"", ""model__n_neighbors"": 5, ""model__p"": 1}"
